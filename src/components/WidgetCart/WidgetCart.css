@@ -1,0 +1,14 @@
+.widgetCart {
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    margin-top: -27px;
+    right: 30px;
+}
+
+.widgetCart img {
+    width: 100%;
+}
+.widgetCart img:hover {
+    filter: contrast(0%) sepia(1) hue-rotate(309deg) saturate(1000%);
+}

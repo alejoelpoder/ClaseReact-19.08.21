@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header';
+import ItemListContainer from './components/ItemListContainer';
 
 // const style = {
 //   backgroundColor: 'blue',
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Header />
+      <ItemListContainer text={"Item List Container"} />
     </>
   );
 }

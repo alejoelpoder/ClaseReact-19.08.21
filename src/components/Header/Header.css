@@ -1,0 +1,9 @@
+header {
+    padding-bottom: 10px;
+    border-bottom: solid 2px crimson;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+}

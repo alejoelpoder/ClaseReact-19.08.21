@@ -1,0 +1,12 @@
+.ItemListContainer {
+    margin: 0 auto;
+    height: 200px;
+    width: 1024px;
+    background-color: cyan;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ItemListContainer h2 {
+    font-weight: bold;
+}

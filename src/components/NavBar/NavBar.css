@@ -1,0 +1,21 @@
+ header ul {
+    margin: 0 auto;
+    display: flex;
+    width: 700px;
+    padding: 0;
+    justify-content: space-evenly;
+ }
+ header ul li {
+    list-style: none;
+    font-size: 20px;
+ }
+
+ header ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bolder;
+ }
+
+ header ul li a:hover {
+     color: crimson;
+ }
