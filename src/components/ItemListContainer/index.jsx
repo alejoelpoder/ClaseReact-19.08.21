@@ -1,9 +1,11 @@
 import "./ItemListContainer.css";
+import ProductCard from "../general/ProductCard";
 
 const ItemListContainer = ({text}) => {
     return(
         <div className="ItemListContainer">
-            <h2>{text}</h2>
+            <ProductCard titulo={'Casco soviético'} stock={17} />
+            <ProductCard titulo={'Motór de propulsión'} stock={5} />
         </div>
     )
 }
