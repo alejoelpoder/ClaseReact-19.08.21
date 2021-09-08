@@ -1,0 +1,20 @@
+.ItemList {
+    width: 100%;
+    margin-top: 50px;
+}
+.ItemList p {
+    width: 300px;
+}
+.ItemList h2 {
+    text-align: center;
+}
+.ItemList ul {
+    width: 100%;
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: space-around;
+}
+.ItemList li {
+    list-style: none;
+}

@@ -1,0 +1,17 @@
+.Item {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+    height: 30px;
+    font-weight: bold;
+}
+.item_precio {
+    font-weight: bold;
+}
+.buttonVerMas {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+    height: 30px;
+    font-weight: bold;
+}
