@@ -15,3 +15,7 @@
     height: 30px;
     font-weight: bold;
 }
+.ProductCart img {
+    width: 300px;
+    height: 300px;  
+}

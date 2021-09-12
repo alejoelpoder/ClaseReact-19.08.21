@@ -14,6 +14,10 @@
     margin-bottom: 10px;
     margin-top: 10px;
 }
+.ProductCart img {
+    width: 300px;
+    height: 300px;
+}
 .ProductCart .qty {
     display: flex;
     justify-content: center;

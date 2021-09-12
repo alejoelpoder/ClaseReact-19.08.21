@@ -1,6 +1,6 @@
 import "./Item.css";
 
-const Item = ({titulo, stock, urlFoto, descripcion, precio}) => {
+const Item = ({titulo, stock, urlFoto, descripcion, precio, id}) => {
 
     return(
         <article className="ProductCart">
@@ -9,7 +9,7 @@ const Item = ({titulo, stock, urlFoto, descripcion, precio}) => {
             <div>
                 <p>{descripcion}</p>
                 <span className='item_precio'>{`$${precio}`}</span>
-                <button className="buttonVerMas">Ver más</button>
+                <a href={`./detail/${id}`}><button className="buttonVerMas">Ver más</button></a>
                 <span>{`stock: ${stock}`}</span>
             </div>
         </article>

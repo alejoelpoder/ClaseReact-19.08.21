@@ -5,7 +5,7 @@ import WidgetCart from "../WidgetCart";
 const Header = () => {
     return(
         <header>
-            <h1>Life on Mars</h1>
+            <a href="../../"><h1>Life on Mars</h1></a>
             <NavBar />
             <WidgetCart />
         </header>
