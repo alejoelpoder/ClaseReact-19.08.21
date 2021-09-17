@@ -1,8 +1,9 @@
 import './App.css';
 import Header from './components/Header';
 import ItemListContainer from './components/ItemListContainer';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'; 
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 import ItemDetailContainer from './components/ItemDetailContainer';
+import Categoria from './components/Categoria';
 
 // const style = {
 //   backgroundColor: 'blue',
@@ -14,20 +15,21 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Header />
 
       <Switch>
         <Route exact path="/">
           <ItemListContainer text={"Item List Container"} />
         </Route>
-      </Switch>
-      <Switch>
         <Route path="/detail/:id?">
           <ItemDetailContainer />
         </Route>
+        <Route path="/categoria/:cat?">
+          <Categoria />
+        </Route>
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 }
 

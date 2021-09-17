@@ -5,23 +5,23 @@ const NavBar = () => {
     const navItems = [
             {
                 text: 'Cascos',
-                url: '/category/cascos',
+                url: '/categoria/cascos',
             },
             {
                 text: 'Trajes',
-                url: '/category/trajes',
+                url: '/categoria/trajes',
             },
             {
                 text: 'Cohetes',
-                url: '/category/cohetes',
+                url: '/categoria/cohetes',
             },
             {
                 text: 'Motores',
-                url: '/category/motores',
+                url: '/categoria/motores',
             },
             {
                 text: 'Ofertas',
-                url: '/category/ofertas',
+                url: '/categoria/ofertas',
             },
     ]
 

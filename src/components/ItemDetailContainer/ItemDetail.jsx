@@ -1,7 +1,22 @@
 import "./ItemDetail.css"
+import ItemCount from "../general/ItemCount"
+import { useState } from "react";
 
 
 const ItemDetail = ({titulo, urlFoto, descripcion, precio}) => {
+
+    const [qty, setQty] = useState(1)
+    const [datastock, setDatastock] = useState(10)
+    const [buttoncart, setButtoncart] = useState(true)
+
+    const onAdd = (e) => {
+        if(buttoncart) {
+            alert(`Agregaste ${qty} ${titulo}`)
+            setDatastock(datastock - qty)
+            setQty(1)
+            setButtoncart(!buttoncart)
+        }
+    }
 
     return(
         <div className="productDetail">
@@ -12,7 +27,8 @@ const ItemDetail = ({titulo, urlFoto, descripcion, precio}) => {
             <div className="productDetailRow">
                 <p>{descripcion}</p>
                 <span className='ItemDetail_precio'>{`$${precio}`}</span>
-                <a href="../carrito"><button className="buttonAgregarCarrito">Agregar al carrito</button></a>
+                <ItemCount titulo={titulo} stock={10} onadd={onAdd} qty={qty} datastock={datastock} setQty={setQty} buttoncart={buttoncart} />
+                {/* <a href="../carrito"><button className="buttonAgregarCarrito">Agregar al carrito</button></a> */}
             </div>
         </div>
     )

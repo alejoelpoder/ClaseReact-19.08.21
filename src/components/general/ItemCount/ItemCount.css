@@ -1,0 +1,53 @@
+.qty {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.qty button {
+    position: relative;
+    cursor: pointer;
+    background: none;
+}
+.resta, .suma {
+    border: solid 1px #000;
+    width: 30px;
+    height: 30px;
+}
+.resta {
+    border-right: none;
+}
+.suma {
+    border-left: none;
+}
+.resta::before, .suma::before, .suma::after {
+    content: '';
+    position: absolute;
+    background-color: crimson;
+    top: 50%;
+    left: 50%;
+    border-radius: 3px;
+}
+.resta::before, .suma::before {
+    width: 16px;
+    height: 4px;
+    margin: -2px 0 0 -8px;
+}
+.suma::after {
+    width: 4px;
+    height: 16px;
+    margin: -8px 0 0 -2px;
+}
+input {
+    border: solid 1px #000;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    width: 100px;
+}
+.addBtn {
+    margin: 0 auto;
+    display: block;
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+}

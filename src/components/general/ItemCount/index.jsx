@@ -1,16 +1,22 @@
 import "./ItemCount.css";
 import { useState } from "react";
 
-const ItemCount = ({titulo, stock}) => {
+const ItemCount = ({onadd, qty, datastock, setQty, buttoncart}) => {
 
-    const [qty, setQty] = useState(1)
-    const [datastock, setDatastock] = useState(stock)
+    // onadd = (e) => {
+    //     console.log(e)
+    // }
 
-    const onAdd = () => {
-        alert(`Agregaste ${qty} ${titulo}`)
-        setDatastock(datastock - qty)
-        setQty(1)
-    }
+    // const [qty, setQty] = useState(1)
+    // const [datastock, setDatastock] = useState(stock)
+
+    // const onAdd = () => {
+    //     alert(`Agregaste ${qty} ${titulo}`)
+    //     setDatastock(datastock - qty)
+    //     setQty(1)
+    // }
+    
+    
 
     return(
 
@@ -25,15 +31,27 @@ const ItemCount = ({titulo, stock}) => {
                 <input type="text" value={qty} readOnly />
                 <button
                     className="suma"
-                    disabled={qty >= datastock ? 'disabled' : null}
+                    disabled={qty >= {datastock} ? 'disabled' : null}
                     onClick={() => setQty(qty + 1)}
                 ></button>
             </div>
-            <button
-                disabled={datastock === 0 ? 'disabled' : null}
-                className="addBtn"
-                onClick={onAdd}
-            >Agregar al carrito</button>
+            {
+                buttoncart?
+                    <button
+                        disabled={datastock === 0 ? 'disabled' : null}
+                        className="addBtn"
+                        onClick={onadd}
+                    >Agregar al carrito</button>
+                :
+                    <a href="../../Cart">
+                        <button
+                            disabled={datastock === 0 ? 'disabled' : null}
+                            className="addBtn"
+                            onClick={onadd}
+                        >Ir al carrito</button>
+                    </a> 
+            }
+            
         </>
     )
 }
