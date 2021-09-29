@@ -1,11 +1,14 @@
 import "./Header.css";
 import NavBar from "../NavBar";
 import WidgetCart from "../WidgetCart";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return(
         <header>
-            <a href="../../"><h1>Life on Mars</h1></a>
+            <Link exact to='/'>
+                <a href="../../"><h1>Life on Mars</h1></a>
+            </Link>
             <NavBar />
             <WidgetCart />
         </header>

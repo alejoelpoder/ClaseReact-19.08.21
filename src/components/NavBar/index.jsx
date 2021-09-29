@@ -1,4 +1,5 @@
 import "./NavBar.css"
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
 
@@ -33,7 +34,9 @@ const NavBar = () => {
                         navItems &&
                         navItems.map((item, i) => 
                             <li key={i}>
-                                <a href={item.url} rel="noreferrer">{item.text}</a>
+                                <Link to={item.url}>
+                                    {item.text}
+                                </Link>
                             </li>
                         )
                     }

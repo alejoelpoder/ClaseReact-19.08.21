@@ -1,13 +1,17 @@
 import "./ItemDetail.css"
 import ItemCount from "../general/ItemCount"
 import { useState } from "react";
+import { useCartContext } from "../context/cartContext";
 
 
-const ItemDetail = ({titulo, urlFoto, descripcion, precio}) => {
+const ItemDetail = ({titulo, urlFoto, descripcion, precio, item}) => {
 
     const [qty, setQty] = useState(1)
     const [datastock, setDatastock] = useState(10)
     const [buttoncart, setButtoncart] = useState(true)
+    const {addToCart} = useCartContext()
+
+    console.log(addToCart)
 
     const onAdd = (e) => {
         if(buttoncart) {
@@ -16,6 +20,7 @@ const ItemDetail = ({titulo, urlFoto, descripcion, precio}) => {
             setQty(1)
             setButtoncart(!buttoncart)
         }
+        addToCart({item: item, cantidad: qty})
     }
 
     return(
