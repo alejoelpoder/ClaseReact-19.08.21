@@ -12,3 +12,19 @@
 .widgetCart img:hover {
     filter: contrast(0%) sepia(1) hue-rotate(309deg) saturate(1000%);
 }
+.cantidadProductos {
+    background-color: rgb(177, 22, 22);
+    border-radius: 10px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-open {
+    display: block;
+}
+.cart-close {
+    display: none;
+}
