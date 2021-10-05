@@ -1,8 +1,26 @@
 import "./ItemListContainer.css";
 import ProductCard from "../general/ProductCard";
 import ItemList from "../ItemList";
+import { useEffect, useState } from "react";
+import { getFirestore } from "../../services/getFirebase";
 
 const ItemListContainer = () => {
+
+    // const [item, setItem] = useState([])
+
+    useEffect(() => {
+        const dbQuery = getFirestore()
+        const traer = dbQuery.collection('items')
+        traer.get().then(resp => console.log(resp))
+        // .catch(err => console.log(err))
+    }, [])
+
+
+    // .then(res => {
+    //     setItem(res.docs.map(item => ({id: item.id, ...item.data()})))
+    //     console.log(item)
+    // })
+
 
     const products = [
         {
@@ -33,10 +51,6 @@ const ItemListContainer = () => {
 
     return(
         <div className="ItemListContainer">
-            <div className="Itemcontainer">
-                <ProductCard titulo={'Casco soviético'} stock={17} urlFoto={'https://preview.free3d.com/img/2020/05/2324859450445268195/zus32lda-900.jpg'}/>
-                <ProductCard titulo={'Motór de propulsión'} stock={5} urlFoto={'https://i.pinimg.com/originals/52/cf/1f/52cf1fbb8ecc4b66afce631b17f14f2e.jpg'} />
-            </div>
             <div className="Itemcontainer">
                 <ItemList products={products} />
             </div>

@@ -11,11 +11,8 @@ const ItemDetail = ({titulo, urlFoto, descripcion, precio, item}) => {
     const [buttoncart, setButtoncart] = useState(true)
     const {addToCart} = useCartContext()
 
-    console.log(addToCart)
-
-    const onAdd = (e) => {
+    const onAdd = () => {
         if(buttoncart) {
-            alert(`Agregaste ${qty} ${titulo}`)
             setDatastock(datastock - qty)
             setQty(1)
             setButtoncart(!buttoncart)
@@ -33,7 +30,6 @@ const ItemDetail = ({titulo, urlFoto, descripcion, precio, item}) => {
                 <p>{descripcion}</p>
                 <span className='ItemDetail_precio'>{`$${precio}`}</span>
                 <ItemCount titulo={titulo} stock={10} onadd={onAdd} qty={qty} datastock={datastock} setQty={setQty} buttoncart={buttoncart} />
-                {/* <a href="../carrito"><button className="buttonAgregarCarrito">Agregar al carrito</button></a> */}
             </div>
         </div>
     )

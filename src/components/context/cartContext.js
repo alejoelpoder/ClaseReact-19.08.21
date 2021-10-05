@@ -13,23 +13,17 @@ const CartContextProvider = ({children}) => {
 
         const nuevoCartList = [...cartList];
 
-        const verificarProducto = existeEnCarrito((item.item.id))
-
-        console.log(verificarProducto)
+        const verificarProducto = existeEnCarrito(item.item.id)
 
         if(verificarProducto) {
             nuevoCartList[nuevoCartList.findIndex(item => item.item.id === verificarProducto.item.id)].cantidad = nuevoCartList[nuevoCartList.findIndex(item => item.item.id === verificarProducto.item.id)].cantidad + item.cantidad
             setCartList(nuevoCartList)
 
-            console.log(cartList)
-
             return;
         }
 
-        // item.cantidad = 1;
-
         setCartList([...nuevoCartList, item])
-        // setCartList([...cartList, item])
+        
     }
 
     const borrarProducto = (item) => {
@@ -43,8 +37,6 @@ const CartContextProvider = ({children}) => {
     }
 
     const borrarCarrito = () => setCartList([])
-
-    // console.log(cartList)
 
     return (
         <cartContext.Provider value={{

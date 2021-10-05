@@ -18,9 +18,8 @@ const WidgetCart = () => {
         cantidadArr.forEach (function(num) {
             suma += num;
         })
-        console.log(suma)
+
         setCantidad(suma)
-        console.log()
     }
 
     useEffect(() => { 

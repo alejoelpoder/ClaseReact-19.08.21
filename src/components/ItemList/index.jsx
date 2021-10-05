@@ -17,8 +17,6 @@ const ItemList = ({products}) => {
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    console.log(items)
-
     return(
         <div className="ItemList">
             {
