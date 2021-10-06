@@ -1,6 +1,11 @@
 .ItemList {
-    width: 100%;
-    margin-top: 50px;
+    padding: 50px 0;
+    margin: 0 auto;
+    width: 1170px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
 }
 .ItemList p {
     width: 300px;
@@ -10,11 +15,11 @@
 }
 .ItemList ul {
     width: 100%;
-    display: flex;
     padding: 0;
-    align-items: center;
-    justify-content: space-around;
 }
 .ItemList li {
     list-style: none;
+    width: 350px;
+    float: left;
+    margin: 20px;
 }

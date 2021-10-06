@@ -1,32 +1,32 @@
 import "./ItemList.css";
 import { useState, useEffect } from 'react';
 import Item from "../general/Item";
+import { getFirestore } from "../../services/getFirebase";
 
-const ItemList = ({products}) => {
+const ItemList = () => {
 
-    const[items, setItems] = useState([])
-
-    const getProducts = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(products);
-        }, 2000)
-    })
+    const [item, setItem] = useState([])
 
     useEffect(() => {
-        getProducts.then(res => setItems(res))
-        //eslint-disable-next-line react-hooks/exhaustive-deps
+        const dbQuery = getFirestore()
+        const traer = dbQuery.collection('items')
+
+        traer.get().then(({docs}) => {
+            setItem(docs.map(producto => ({id: producto.id, ...producto.data()})))
+        })
+        
     }, [])
 
     return(
         <div className="ItemList">
             {
-                    items.length?
+                    item.length?
                     <>
                         <h2>Mejores productos</h2>
 
                         <ul>
                             {
-                                items.map(item => (
+                                item.map(item => (
                                     <li key={item.id}>
                                         <Item 
                                             titulo={item.titulo}

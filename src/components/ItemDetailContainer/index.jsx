@@ -1,22 +1,20 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
 import ItemDetail from "./ItemDetail";
-import { ContextApp } from "../../App";
+import { getFirestore } from "../../services/getFirebase";
 
 const ItemDetailContainer = () => {
     const {id} = useParams();
     const [product, setProduct] = useState({});
-    const { state } = useContext(ContextApp)
-
-    const getProducts = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(state)
-        }, 2000) 
-    });
 
     useEffect(() => {
-        getProducts.then(response => setProduct(response));
-        //eslint-disable-next-line react-hooks/exhaustive-deps
+        const dbQuery = getFirestore()
+        const traer = dbQuery.collection('items')
+
+        traer.get().then(({docs}) => {
+            setProduct(docs.map(producto => ({id: producto.id, ...producto.data()})))
+        })
+        
     }, [])
 
     return (
