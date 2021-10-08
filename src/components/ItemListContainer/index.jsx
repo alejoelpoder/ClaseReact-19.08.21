@@ -1,8 +1,5 @@
 import "./ItemListContainer.css";
-import ProductCard from "../general/ProductCard";
 import ItemList from "../ItemList";
-import { useEffect, useState } from "react";
-import { getFirestore } from "../../services/getFirebase";
 
 const ItemListContainer = () => {
 
