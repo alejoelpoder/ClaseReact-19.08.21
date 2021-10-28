@@ -82,8 +82,6 @@ const Checkout = () => {
         traer.get().then(({docs}) => {
             setPedidos(docs.map(producto => ({id: producto.id, ...producto.data()})))
         })
-        console.log('pedidos')
-        console.log(pedidos)
     }, [endCheckout])
 
     useEffect(() => { 

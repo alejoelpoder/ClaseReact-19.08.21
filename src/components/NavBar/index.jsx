@@ -13,8 +13,6 @@ const NavBar = () => {
 
         traer.get().then(({docs}) => {
             setNavItems(docs.map(categoria => ({id: categoria.id, ...categoria.data()})))
-            console.log('pedidos')
-            console.log(navItems)
         })
 
     }, [])
