@@ -1,8 +1,11 @@
 import firebase from "firebase"
-import 'firebase/firestore'
+
 
 
 const firebaseConfig = {
+
+    // apiKey: process.env.APIKEY,
+
     apiKey: "AIzaSyBUnzhwaZlYyU79CsJdE60fEMUeoR1Gu0s",
 
     authDomain: "react-coderhouse-70f3a.firebaseapp.com",
@@ -23,4 +26,5 @@ const app = firebase.initializeApp(firebaseConfig)
 export function getFirestore(){
     
     return firebase.firestore(app)
+    // return firebase.auth.GoogleAuthProvider(googleProvider)
 }

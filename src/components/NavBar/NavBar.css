@@ -1,4 +1,6 @@
- header ul {
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;900&display=swap');
+
+header ul {
     margin: 0 auto;
     display: flex;
     width: 700px;
@@ -7,13 +9,14 @@
  }
  header ul li {
     list-style: none;
-    font-size: 20px;
+    font-size: 23px;
  }
 
  header ul li a {
     text-decoration: none;
     color: #000;
     font-weight: bolder;
+    font-family: 'Crimson Pro', serif;
  }
 
  header ul li a:hover {

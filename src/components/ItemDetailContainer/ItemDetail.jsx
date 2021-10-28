@@ -4,10 +4,10 @@ import { useState } from "react";
 import { useCartContext } from "../context/cartContext";
 
 
-const ItemDetail = ({titulo, urlFoto, descripcion, precio, item}) => {
+const ItemDetail = ({titulo, urlFoto, descripcion, precio, item, stock}) => {
 
     const [qty, setQty] = useState(1)
-    const [datastock, setDatastock] = useState(10)
+    const [datastock, setDatastock] = useState(stock)
     const [buttoncart, setButtoncart] = useState(true)
     const {addToCart} = useCartContext()
 
@@ -28,8 +28,8 @@ const ItemDetail = ({titulo, urlFoto, descripcion, precio, item}) => {
             </div>
             <div className="productDetailRow">
                 <p>{descripcion}</p>
-                <span className='ItemDetail_precio'>{`$${precio}`}</span>
-                <ItemCount titulo={titulo} stock={10} onadd={onAdd} qty={qty} datastock={datastock} setQty={setQty} buttoncart={buttoncart} />
+                <span className='ItemDetail_precio'>{`Precio: $${precio}`}</span>
+                <ItemCount titulo={titulo} onadd={onAdd} qty={qty} datastock={datastock} setQty={setQty} buttoncart={buttoncart} />
             </div>
         </div>
     )

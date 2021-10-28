@@ -1,0 +1,56 @@
+.cart-process-cont {
+    width: 1200px;
+    margin: 0 auto;
+}
+.elemento-cart {
+    width: 1200px;
+    margin: 0 auto;
+    border: solid 1px #000;
+    display: flex;
+    justify-content: space-between;
+}
+.elemento-cart img {
+    height: 100px;
+    width: 100px;
+}
+.elemento-cart h2 {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.elemento-cart button {
+    cursor: pointer;
+    background: linear-gradient(73deg, rgba(2,0,36,1) 0%, rgba(97,9,121,1) 22%, rgba(100,9,120,1) 38%, rgba(255,0,82,1) 88%);
+    border: navajowhite;
+    color: #fff;
+    font-weight: 600;
+}
+.cart-item-cargos {
+    width: 220px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.precio-total p {
+    text-align: right;
+    font-weight: 600;
+    font-size: 20px;
+}
+.end-cart {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 50px;
+}
+.end-cart button {
+    width: 100%;
+    margin: 5px;
+    cursor: pointer;
+    background: linear-gradient(73deg, rgba(2,0,36,1) 0%, rgba(97,9,121,1) 22%, rgba(100,9,120,1) 38%, rgba(255,0,82,1) 88%);
+    border: none;
+    height: 30px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+}

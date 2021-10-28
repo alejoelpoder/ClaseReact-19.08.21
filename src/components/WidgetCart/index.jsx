@@ -27,7 +27,7 @@ const WidgetCart = () => {
     }, [cartList]);
 
     return(
-        <div className={`widgetCart ${cantidad? 'cart-open' : 'cart-close'}`}>
+        <div className='widgetCart cart-open'>
             <Link to={'/Cart'}>
                 <img src="https://image.flaticon.com/icons/png/512/3144/3144456.png" alt="widget cart" />
             </Link>

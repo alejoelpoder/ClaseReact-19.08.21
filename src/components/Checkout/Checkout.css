@@ -1,0 +1,84 @@
+.checkout-box {
+    width: 800px;
+    border: solid 1px #000;
+    margin: 0 auto;
+    display: flex;
+}
+.checkout-box form {
+    display: flex;
+    flex-direction: column;
+}
+.checkout-box form input {
+    width: 90%;
+    margin: 10px auto;
+    border: solid 1px #000;
+    text-align: left;
+    padding: 5px;
+    border-radius: 5px;
+}
+.cont-ch {
+    width: 50%;
+}
+
+.cont-ch:nth-of-type(1) {
+    border-right: solid 1px #000;
+    padding-right: 10px;
+}
+.cont-ch:nth-of-type(2) {
+    border-left: solid 1px #000;
+    padding-left: 10px;
+}
+.cont-ch h2 {
+    text-align: center;
+    font-family: 'Crimson Pro', serif;
+}
+.cont-ch button, .regresar-ch-btn {
+    cursor: pointer;
+    width: 300px;
+    margin: 10px auto;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    background: linear-gradient(73deg, rgba(2,0,36,1) 0%, rgba(97,9,121,1) 22%, rgba(100,9,120,1) 38%, rgba(255,0,82,1) 88%);
+}
+
+.detalles-de-orden {
+    width: 500px;
+    margin: 0 auto;
+    border: solid 2px #000;
+    border-radius: 10px;
+}
+.detalles-de-orden h2 {
+    background: red;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    border-bottom: solid;
+    font-family: 'Crimson Pro', serif;
+    border-radius: 7px 7px 0 0;
+}
+.detalles-de-orden p {
+    padding: 10px;
+}
+.detalles-de-orden-subt {
+    text-align: center;
+    font-weight: 600;
+}
+.detalles-sub-box {
+    border-bottom: solid;
+}
+.detalles-sub-box:nth-of-type(1) {
+    border-top: solid;
+}
+.detalles-sub-box p {
+    margin: 0;
+}
+.total-a-pagar-ch {
+    text-align: right;
+}
+.regresar-ch-btn {
+    margin-top: 60px;
+    display: block;
+}

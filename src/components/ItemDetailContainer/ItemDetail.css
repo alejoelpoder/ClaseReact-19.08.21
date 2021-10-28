@@ -1,10 +1,18 @@
 .productDetail {
     display: flex;
+    height: 500px;
 }
 .productDetailRow:nth-child(1) {
     width: 100%;
     max-width: 40%;
 }
+.productDetailRow:nth-child(1) h3 {
+    text-align: center;
+    font-family: 'Crimson Pro', serif;
+    font-size: 30px;
+    margin: 20px;
+}
+
 .productDetailRow:nth-child(2) {
     display: flex;
     flex-direction: column;
@@ -17,9 +25,11 @@
 
 .productDetail p {
     margin: 0;
+    font-size: 17px;
 }
 .productDetail span {
     font-weight: bold;
+    font-size: 20px;
 }
 .productDetail button {
     width: 70%;

@@ -7,6 +7,12 @@ export const useCartContext = () => useContext(cartContext)
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
+    const [orderId, setOrderId] = useState('')
+
+    const xd = (a) => {
+        setOrderId(a)
+    }
+
     const existeEnCarrito = (id) => cartList.find(item => item.item.id === id)
 
     const addToCart = (item) => {
@@ -41,6 +47,8 @@ const CartContextProvider = ({children}) => {
     return (
         <cartContext.Provider value={{
             cartList,
+            xd,
+            orderId,
             addToCart,
             borrarProducto,
             borrarCarrito

@@ -1,7 +1,7 @@
 .ItemList {
-    padding: 50px 0;
+    padding: 0;
     margin: 0 auto;
-    width: 1170px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -11,16 +11,21 @@
     width: 300px;
 }
 .ItemList h2 {
+    font-family: 'Crimson Pro', serif;
     text-align: center;
+    font-size: 45px;
+    color: #064ebe;
+    margin: 0;
 }
 .ItemList ul {
-    width: 100%;
+    width: 1320px;
     padding: 0;
 }
 .ItemList li {
     list-style: none;
-    width: 350px;
+    width: 300px;
     float: left;
-    margin: 20px;
+    margin: 15px;
     box-shadow: 0px 0px 17px -6px #000;
+    border-radius: 10px;
 }

@@ -2,7 +2,7 @@ import "./ItemCount.css";
 import { Link } from "react-router-dom";
 
 const ItemCount = ({onadd, qty, datastock, setQty, buttoncart}) => {
-    
+    console.log(qty)
     return(
         <>
             <span>{`stock: ${datastock}`}</span>
@@ -18,7 +18,7 @@ const ItemCount = ({onadd, qty, datastock, setQty, buttoncart}) => {
                         <input type="text" value={qty} readOnly />
                         <button
                             className="suma"
-                            disabled={qty >= {datastock} ? 'disabled' : null}
+                            disabled={qty >= datastock ? 'disabled' : null}
                             onClick={() => setQty(qty + 1)}
                         ></button>
                     </div>
@@ -30,7 +30,7 @@ const ItemCount = ({onadd, qty, datastock, setQty, buttoncart}) => {
                 </>
                 :
                 <Link to={'/Cart'}>
-                    <button>Ir al carrito</button>
+                    <button className="addBtn">Ir al carrito</button>
                 </Link>
             }
         </>

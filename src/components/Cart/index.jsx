@@ -1,17 +1,10 @@
-import firebase from "firebase"
+import './Cart.css'
 import 'firebase/firestore'
 import { useCartContext } from "../context/cartContext";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getFirestore } from "../../services/getFirebase";
 
 const Cart = () => {
-
-    const [formData, setFormData] = useState({
-        nombre: '',
-        telefono: '',
-        email: ''
-    })
 
     const { cartList, borrarProducto, borrarCarrito } = useCartContext()
 
@@ -29,67 +22,35 @@ const Cart = () => {
         setPrecio(suma)
     }
 
-    const generarOrden = (e) => {
-
-        e.preventDefault()
-
-        let order = {};
-
-        order.fecha = firebase.firestore.Timestamp.fromDate( new Date() );
-        order.buyer = formData
-        order.total = precio
-        order.items = cartList.map(cartItem => {
-            const id = cartItem.item.id
-            const titulo = cartItem.item.titulo
-            const precio = cartItem.item.precio
-
-            return {id, titulo, precio}
-        })
-        console.log(order)
-
-        const db = getFirestore();
-        db.collection('orders').add(order)
-        .then(res => console.log(res.id))
-        .catch(err => console.log(err))
-        .finally(setFormData({
-            nombre: '',
-            telefono: '',
-            email: ''
-        }))
-    }
-
-    const handleOnChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        })
-        
-    }
-    console.log(formData)
-
     useEffect(() => { 
         darPrecioTotal()
     }, [cartList]);
 
     return(
-        <>
+        <div className='cart-process-cont'>
             {
                 Object.keys(cartList).length !== 0 ?
                 <>
-                    {cartList.map(item => <><h2>{item.item.titulo}</h2><span>{`$${item.item.precio} x `}</span><span>{item.cantidad}</span><button onClick={() => borrarProducto(item)}>Borrar producto</button></>)}
-                    <br /><br />
-                    {`El precio total es: $${precio}`}
-                    <br /><br />
-                    <button onClick={borrarCarrito}>Borrar carrito</button>
-                    <form id="form-checkout" action=""
-                        onSubmit={generarOrden}
-                        onChange={handleOnChange}
-                    >
-                        <input id='form-checkout-nombre' type="text" name='nombre' placeholder='Nombre' value={formData.nombre} />
-                        <input type="text" name='telefono' placeholder='Telefono' value={formData.Telefono}/>
-                        <input type="text" name='email' placeholder='Email' value={formData.Email}/>
-                        <button>Ver orden</button>
-                    </form>
+                    {cartList.map(item => 
+                        <>
+                            <div className="elemento-cart">
+                                <img src={item.item.urlFoto} alt="" />
+                                <h2>{`Producto: ${item.item.titulo}`}</h2>
+                                <p className="cart-item-cargos">{`Precio: $${item.item.precio}`}</p>
+                                <p className="cart-item-cargos">{`Cantidad: ${item.cantidad}`}</p>
+                                <p className="cart-item-cargos">{`Total: $${item.item.precio * item.cantidad}`}</p>
+                                <button onClick={() => borrarProducto(item)}>Borrar producto</button>
+                            </div>
+                        </>)}
+                    <div className="precio-total">
+                        <p>{`Precio total: $${precio}`}</p>
+                    </div>
+                    <div className="end-cart">
+                        <Link to='./Checkout'>
+                            <button>Checkout</button>
+                        </Link>
+                        <button onClick={borrarCarrito}>Borrar carrito</button>
+                    </div>
                 </>:
                 <>
                     <p>No hay productos en el carrito</p>
@@ -98,7 +59,7 @@ const Cart = () => {
                     </Link>
                 </>
             }
-        </>
+        </div>
     )
 }
 

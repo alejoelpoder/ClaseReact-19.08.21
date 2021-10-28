@@ -7,15 +7,36 @@
 }
 .item_precio {
     font-weight: bold;
+    text-align: center;
+    display: block;
+    margin-bottom: 17px;
 }
 .buttonVerMas {
     width: 70%;
     margin: 0 auto;
     display: block;
-    height: 30px;
+    height: 40px;
     font-weight: bold;
+    font-family: 'Crimson Pro', serif;
+    font-size: 18px;
+    background: linear-gradient(73deg, rgba(2,0,36,1) 0%, rgba(97,9,121,1) 22%, rgba(100,9,120,1) 38%, rgba(255,0,82,1) 88%);
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.ProductCart a {
+    text-decoration: none;
+}
+.ProductCart h3 {
+    font-family: 'Crimson Pro', serif;
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 0;
 }
 .ProductCart img {
     width: 300px;
     height: 300px;  
+    border-radius: 10px 10px 0 0;
 }

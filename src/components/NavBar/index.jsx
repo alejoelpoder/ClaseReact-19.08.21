@@ -1,30 +1,23 @@
 import "./NavBar.css"
 import { Link } from "react-router-dom"
+import { getFirestore } from "../../services/getFirebase";
+import { useEffect, useState } from "react";
 
 const NavBar = () => {
 
-    const navItems = [
-            {
-                text: 'Cascos',
-                url: '/categoria/cascos',
-            },
-            {
-                text: 'Trajes',
-                url: '/categoria/trajes',
-            },
-            {
-                text: 'Cohetes',
-                url: '/categoria/cohetes',
-            },
-            {
-                text: 'Motores',
-                url: '/categoria/motores',
-            },
-            {
-                text: 'Ofertas',
-                url: '/categoria/ofertas',
-            },
-    ]
+    const [navItems, setNavItems] = useState([])
+
+    useEffect(() => {
+        const dbQuery = getFirestore()
+        const traer = dbQuery.collection('categories')
+
+        traer.get().then(({docs}) => {
+            setNavItems(docs.map(categoria => ({id: categoria.id, ...categoria.data()})))
+            console.log('pedidos')
+            console.log(navItems)
+        })
+
+    }, [])
 
     return(
         <>

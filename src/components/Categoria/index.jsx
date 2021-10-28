@@ -1,3 +1,4 @@
+import './Categoria.css'
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import Item from "../general/Item"
@@ -24,7 +25,7 @@ const Categoria = () => {
             {
                     items.length?
                     <>
-                        <h2>Mejores productos de la categoría {cat}</h2>
+                        <h2 className="cat-cont">{cat}</h2>
 
                         <ul>
                             {

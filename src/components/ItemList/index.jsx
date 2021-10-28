@@ -22,11 +22,11 @@ const ItemList = () => {
             {
                     item.length?
                     <>
-                        <h2>Mejores productos</h2>
+                        <h2>Productos destacados</h2>
 
                         <ul>
                             {
-                                item.map(item => (
+                                item.filter(item => item.destacado === true).map(item => (
                                     <li key={item.id}>
                                         <Item 
                                             titulo={item.titulo}
